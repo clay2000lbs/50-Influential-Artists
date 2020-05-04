@@ -213,6 +213,8 @@ console.log(artists[2].bio)
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
+artists[8].name = "Vincent Van Gogh";
+console.log(artists[8].name);
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -223,10 +225,15 @@ console.log(artists[2].bio)
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
+function getArtistByIndex(array,index) {
+    if (array === "artists") {
+      console.log(`The artist at index ${artists[index].id} is ${artists[index].name}.`);
+    }
+    else {
+      console.log('Please use the artists inventory.');
+    }
   }
-  
+  getArtistByIndex("artists",9);
   /**
 
 
@@ -238,21 +245,36 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(array,index) {
+
+  let remove = artists[index];
+
+  if (array === "artists") {
+    console.log(`${artists[index].name} has been removed.`)
+    artists[0] = remove;
+    artists.shift(remove);
+
   }
+  else {
+    console.log('Please use the artists inventory.');
+  }
+}
+
   
   /**
 
 
 /* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(array){
 
-    /* Code here */
-
+    for (i = 0; i < 19; i++ ) {
+      if ( artists[i].paintings >  100) {
+        console.log(artists[i].name);
+      }
+    }
   }
-
+lotsOfArt("artists");
 
 /* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
@@ -263,13 +285,26 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
 
-    /* Code here */
+function addArtist(newobj){
+
+  artists.push(newobj);
 
   }
 
+addArtist(
+  {
+    "id": 20,   
+    "name": "Clayton J. Wilkerson",
+    "years": "1990 - 2020",
+    "genre": "Web Design",
+    "nationality": "Aamerican",
+    "bio": "Clayton J. Wilkerson ( Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. )"
+  }
+   );
 
+  console.log(artists[20]);
+    
 
 
 
