@@ -2,6 +2,10 @@
   text-decoration: none;
   color: black;
 }
+.flex-flex {
+  display: flex;
+  justify-content: center;
+}
 html,
 body,
 div,
@@ -114,8 +118,8 @@ nav a:hover {
 }
 .title-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin: 0 0 0 10%;
   width: 75%;
@@ -123,19 +127,27 @@ nav a:hover {
 }
 .title-container a {
   text-decoration: none;
-  color: black;
   background-color: white;
+  color: black;
   font-size: 2rem;
   margin-top: 2%;
   padding: 1% 2% 1% 2%;
   border-radius: 5%;
 }
 .title-container h1 {
-  border: 1px solid black;
   width: 60%;
   font-size: 7rem;
   color: white;
   text-align: center;
+}
+.title-container background-image:hover {
+  opacity: 0.8;
+}
+@media (max-width: 500px) {
+  .title-container h1 {
+    font-size: 5rem;
+    width: 90%;
+  }
 }
 .artists-container {
   margin: 2%;
@@ -156,6 +168,9 @@ nav a:hover {
   width: 50%;
   margin-top: 2%;
 }
+.artists-container .artist img:hover {
+  opacity: 0.8;
+}
 .artists-container .artist .bio {
   width: 90%;
   margin-top: 2%;
@@ -164,4 +179,15 @@ nav a:hover {
   margin-top: 2%;
   text-decoration: none;
   color: black;
+}
+@media (max-width: 500px) {
+  .artists-container {
+    flex-direction: column;
+  }
+  .artists-container .artist {
+    width: 90%;
+  }
+  .artists-container .artist img {
+    width: 75%;
+  }
 }
