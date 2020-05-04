@@ -1,0 +1,70 @@
+.title-container {
+   .flex-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 0 10%;
+    width: 75%;
+    height: 45rem;
+    a {
+        text-decoration: none;
+       .button(@white, @black);
+        font-size: 2rem;
+        margin-top: 2%;
+        padding: 1% 2% 1% 2%;
+        border-radius: 5%;
+    }
+    h1 {
+        width: 60%;
+        font-size: 7rem;
+        color: @white;
+        text-align: center;
+    }
+    background-image:hover {
+        opacity: 0.8;
+    }
+    @media (max-width: 500px) {
+        h1 {
+            font-size: 5rem;
+            width: 90%;
+        }
+    }
+}
+
+.artists-container {
+    margin: 2%;
+    .flex-flex;
+    border-top: 1px solid @black;
+    padding: 1%;
+    .artist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        text-align: center;
+        padding: 2% 0 2% 0;
+        img {
+            width: 50%;
+            margin-top: 2%;
+        }
+        img:hover {
+            opacity: 0.8;
+        }
+        .bio {
+            width: 90%;
+            margin-top: 2%;
+        }
+        a {
+            margin-top: 2%;
+            .default-link;
+        }
+    }
+    @media (max-width: 500px) {
+        flex-direction: column;
+        .artist {
+            width: 90%;
+            img {
+                width: 75%;
+            }
+        }
+    }
+}
